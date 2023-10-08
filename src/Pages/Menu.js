@@ -1,23 +1,33 @@
 import { menu } from "../MenuList";
 import Cart from "../Assets/carts.png";
 import Realmenu from "./Realmenu";
-import { useReducer, useState } from "react";
-import { ACTIONS } from "./Realmenu";
+import { useState } from "react";
 import "./Menu.css";
 import CartPage from "./CartPage";
 
 export default function Menu() {
   const [carts, setCarts] = useState([]);
+  let total = [];
   console.log(carts);
+  carts.map((cart) => {
+    total.push(cart.price * cart.quantity);
+  });
+  console.log(total);
+  let sum = 0;
+  total.map((total) => {
+    sum = sum + total;
+  });
+  console.log(sum);
+
   const removeHandler = (id) => {
     setCarts((prev) => prev.filter((cart) => cart.id != id));
     carts.map((cart) => {
       if (cart.id == id) {
         cart.Added = false;
         cart.quantity = 1;
+        cart.totalPrice = cart.price;
       }
     });
-    console.log(carts.length);
   };
   let visible = false;
   const closeCartHandler = () => {
@@ -30,7 +40,7 @@ export default function Menu() {
 
   const cartClick = () => {
     visible = !visible;
-    console.log(visible);
+
     if (visible) {
       document.getElementById("hideId").classList.remove("hidden");
       document.getElementById("menuId").classList.add("grid");
@@ -121,11 +131,14 @@ export default function Menu() {
                 >
                   {carts.map((carts) => {
                     return (
-                      <CartPage
-                        cart={carts}
-                        removeHandler={removeHandler}
-                        className="z-10"
-                      />
+                      <>
+                        <CartPage
+                          cart={carts}
+                          removeHandler={removeHandler}
+                          className="z-10"
+                          total={total}
+                        />
+                      </>
                     );
                   })}
                 </div>
@@ -148,7 +161,7 @@ export default function Menu() {
                       <div>
                         <div className="flex justify-between px-6 py-1 font-semibold">
                           <p>ITEMS</p>
-                          <p>$20</p>
+                          <p>${sum}</p>
                         </div>
                         <div className="flex justify-between px-6 py-1 font-semibold">
                           <p>SHIPPING</p>

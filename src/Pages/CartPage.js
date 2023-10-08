@@ -2,13 +2,21 @@ import { useState } from "react";
 
 function CartPage({ cart, removeHandler }) {
   const [quantity, setquantity] = useState(1);
+  cart.totalPrice = cart.price * cart.quantity;
+
   const quantityPlus = () => {
     setquantity((prev) => prev + 1);
-    cart.quantity = quantity;
+    cart.quantity += 1;
   };
+
   const quantityMinus = () => {
-    setquantity((prev) => prev - 1);
-    cart.quantity = quantity;
+    if (cart.quantity > 1) {
+      setquantity((prev) => prev - 1);
+      cart.quantity -= 1;
+    } else {
+      setquantity(1);
+      cart.quantity = 1;
+    }
   };
 
   return (
@@ -47,7 +55,7 @@ function CartPage({ cart, removeHandler }) {
           </button>
 
           <div className="p-4 ml-10">
-            <p>${cart.price}</p>
+            <p>${cart.totalPrice}</p>
           </div>
         </div>
       </div>

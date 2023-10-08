@@ -3,10 +3,11 @@ export const ACTIONS = {
   add: "add",
   remove: "remove",
 };
-function Realmenu({ menus, carts, setCarts }) {
+function Realmenu({ menus, carts, setCarts, func }) {
   function addHandler() {
+    const index = carts.indexOf(menus);
+
     if (menus.Added) {
-      const index = carts.indexOf(menus);
       if (index > -1) {
         carts.splice(index, 1);
       }
@@ -15,10 +16,8 @@ function Realmenu({ menus, carts, setCarts }) {
     } else {
       setCarts([...carts, menus]);
     }
-
     menus.Added = !menus.Added;
   }
-
   return (
     <div>
       <div>

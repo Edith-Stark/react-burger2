@@ -7,15 +7,17 @@ export let menu = [
     price: 20,
     Added: false,
     quantity: 1,
+    totalPrice: 1,
   },
   {
     id: 2,
     name: "Cheese Burger",
     ingridients: "pickels,Cheese,Meat,Something",
     img: require("./Assets/menucheese.jpg"),
-    price: "$20",
+    price: 20,
     Added: false,
     quantity: 1,
+    totalPrice: 1,
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export let menu = [
     price: 20,
     Added: false,
     quantity: 1,
+    totalPrice: 1,
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ export let menu = [
     price: 20,
     Added: false,
     quantity: 1,
+    totalPrice: 1,
   },
   {
     id: 5,
@@ -43,6 +47,7 @@ export let menu = [
     price: 20,
     Added: false,
     quantity: 1,
+    totalPrice: 1,
   },
   {
     id: 6,
@@ -52,6 +57,7 @@ export let menu = [
     price: 20,
     Added: false,
     quantity: 1,
+    totalPrice: 1,
   },
   {
     id: 7,
@@ -61,6 +67,7 @@ export let menu = [
     price: 20,
     Added: false,
     quantity: 1,
+    totalPrice: 1,
   },
   {
     id: 8,
@@ -70,5 +77,6 @@ export let menu = [
     price: 20,
     Added: false,
     quantity: 1,
+    totalPrice: 1,
   },
 ];

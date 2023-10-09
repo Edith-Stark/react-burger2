@@ -30,8 +30,10 @@ module.exports = {
         wmenuw22: "34rem",
         wcart: "4rem",
         wcart2: "5rem",
+        wreserve: "70vw",
       },
       height: {
+        h100: "137%",
         width20px: "21rem",
         height30px: "31rem",
         h20px: "12rem",
@@ -47,6 +49,7 @@ module.exports = {
         hcart: "4rem",
         hmcart: "22rem",
         hcheckout: "9.5rem",
+        hreserve: "80vh",
       },
       fontSize: {
         pixels15: "16px",
@@ -61,6 +64,8 @@ module.exports = {
         mtest: "6rem",
         mtest2: "10rem",
         ml2: "36rem",
+        mlreserve: "13rem",
+        mreservetitle: "35rem",
       },
     },
 

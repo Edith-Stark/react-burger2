@@ -14,6 +14,7 @@ export default function Menu() {
   });
   console.log(total);
   let sum = 0;
+  let shipping = 5;
   total.map((total) => {
     sum = sum + total;
   });
@@ -170,7 +171,7 @@ export default function Menu() {
                         <hr className="bg-gray-100 h-1 rounded" />
                         <div className="flex justify-between px-6 py-1 font-semibold ">
                           <p>TOTAL COST</p>
-                          <p>$5</p>
+                          <p>${sum + shipping}</p>
                         </div>
                         <div className=" justify-between px-6 py-2">
                           <button className="bg-blue-600 px-4 py-2 rounded ml-4 hover:bg-blue-400">

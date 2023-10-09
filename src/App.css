@@ -4,3 +4,6 @@ body {
 .searchBar:focus {
   outline: none;
 }
+.overLayBg {
+  background-color: rgba(0, 0, 0, 0.568);
+}

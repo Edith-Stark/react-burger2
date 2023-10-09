@@ -1,11 +1,15 @@
 import { NavLink, Outlet } from "react-router-dom";
 import "./Nav.css";
-export default function Nav() {
+
+export default function Nav({ overLay }) {
+  const reserveHandler = () => {
+    overLay = !overLay;
+  };
   return (
     <div className="text-white w-full h-32 ">
       <div className="flex justify-between">
         <div className="m-4 p-6">
-          <h1 className="text-sans italic text-lime-400 md:text-4xl text-6xl">
+          <h1 className="text-sans italic font-semibold text-lime-400 md:text-4xl text-6xl">
             Sal's Burger
           </h1>
         </div>
@@ -17,11 +21,17 @@ export default function Nav() {
             <NavLink to="/Menu " className="m-4 px-4   hover:text-red-500 ">
               Menu
             </NavLink>
-            <a className="m-4 px-4   hover:text-red-500 ">About</a>
-            <a className="m-4 px-4   hover:text-red-500 ">Contact</a>
-            <button className=" hover:border-red-500 border-2 p-2   text-xl">
-              Reserve A Table
-            </button>
+            <a className="m-4 px-4   hover:text-red-500 " href="#about">
+              About
+            </a>
+            <a href="#footer" className="m-4 px-4   hover:text-red-500 ">
+              Contact
+            </a>
+            <NavLink to="/reserveTable">
+              <button className=" hover:border-red-500 border-2 p-2   text-xl">
+                Reserve A Table
+              </button>
+            </NavLink>
           </ul>
         </nav>
       </div>
